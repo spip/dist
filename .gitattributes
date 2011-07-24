@@ -6,13 +6,15 @@
 /backend.html -text
 /breve.html -text
 /calendrier.html -text
+css/habillage.css -text
+css/img/rechercher.gif -text
+css/impression.css -text
+css/spip_formulaires.css -text
 /dist_2007.png -text
 /distrib.html -text
 /feed.png -text
 /forum.html -text
-/habillage.css -text
 /ical.html -text
-/impression.css -text
 /inc-documents.html -text
 /inc-entete.html -text
 /inc-forum.html -text
@@ -36,7 +38,6 @@ polices/dustismo_bold.ttf -text
 /puce.gif -text
 /puce_rtl.gif -text
 /recherche.html -text
-/rechercher.gif -text
 /rss_forum_article.html -text
 /rss_forum_breve.html -text
 /rss_forum_rubrique.html -text
@@ -45,5 +46,4 @@ polices/dustismo_bold.ttf -text
 /rubrique.html -text
 /site.html -text
 /sommaire.html -text
-/spip_formulaires.css -text
 /win_width.htc -text
