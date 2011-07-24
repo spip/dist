@@ -29,6 +29,7 @@ modeles/article_traductions.html -text
 modeles/favicon.html -text
 modeles/foreach.html -text
 modeles/lesauteurs.html -text
+modeles/plan.html -text
 /mot.html -text
 /plan.html -text
 /plugin.xml -text
