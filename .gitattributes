@@ -9,6 +9,7 @@
 css/base.css -text
 css/form.css -text
 css/img/background.gif -text
+css/img/quote.png -text
 css/img/rechercher.gif -text
 css/layout.css -text
 css/reset.css -text
@@ -16,11 +17,12 @@ css/spip.css -text
 css/style.css -text
 css/typo.css -text
 /distrib.html -text
-/feed.png -text
 /forum.html -text
 /ical.html -text
 icon/skel.png -text
+img/feed.png -text
 img/spip.gif -text
+img/squelette.png -text
 /inc-rss-item.html -text
 inclure/documents.html -text
 inclure/footer.html -text
