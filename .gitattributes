@@ -18,6 +18,7 @@ css/reset.css -text
 css/spip.css -text
 css/style.css -text
 css/typo.css -text
+/dist_fonctions.php -text
 /distrib.html -text
 /forum.html -text
 /ical.html -text
@@ -36,7 +37,6 @@ inclure/navsub.html -text
 inclure/petition.html -text
 inclure/recents.html -text
 inclure/rubriques.html -text
-/mes_fonctions.php -text
 modeles/article_mots.html -text
 modeles/article_traductions.html -text
 modeles/favicon.html -text
