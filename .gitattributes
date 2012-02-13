@@ -36,6 +36,7 @@ inclure/petition.html -text
 inclure/recents.html -text
 inclure/rubriques.html -text
 lang/paquet-dist.xml -text
+lang/paquet-dist_ar.php -text
 lang/paquet-dist_sk.php -text
 modeles/article_mots.html -text
 modeles/article_traductions.html -text
