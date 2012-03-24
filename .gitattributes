@@ -20,9 +20,23 @@ css/spip.css -text
 css/style.css -text
 css/typo.css -text
 /distrib.html -text
+/favicon.ico.html -text
+formulaires/administration.html -text
+formulaires/ecrire_auteur.html -text
+formulaires/ecrire_auteur.php -text
+formulaires/inc-inscription-explication.html -text
+formulaires/inscription.html -text
+formulaires/inscription.php -text
+formulaires/mot_de_passe.html -text
+formulaires/mot_de_passe.php -text
+formulaires/oubli.html -text
+formulaires/oubli.php -text
+formulaires/recherche.html -text
+formulaires/recherche.php -text
 /forum.html -text
 /ical.html -text
 icon/skel.png -text
+/identifiants.html -text
 img/feed.png -text
 /inc-rss-item.html -text
 inclure/documents.html -text
@@ -48,6 +62,7 @@ modeles/foreach.html -text
 modeles/lesauteurs.html -text
 modeles/plan.html -text
 /mot.html -text
+/nouveautes.html -text
 /plan.html -text
 polices/dustismo-license.txt -text
 polices/dustismo.ttf -text
@@ -55,6 +70,7 @@ polices/dustismo_bold.ttf -text
 /puce.gif -text
 /puce_rtl.gif -text
 /recherche.html -text
+/robots.txt.html -text
 /rss_forum_article.html -text
 /rss_forum_breve.html -text
 /rss_forum_rubrique.html -text
@@ -62,5 +78,7 @@ polices/dustismo_bold.ttf -text
 /rss_forum_thread.html -text
 /rubrique.html -text
 /site.html -text
+/sitemap.xml.html -text
 /sommaire.html -text
+/spip.ico -text
 /win_width.htc -text
