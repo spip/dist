@@ -53,6 +53,7 @@ lang/paquet-dist.xml -text
 lang/paquet-dist_ar.php -text
 lang/paquet-dist_fa.php -text
 lang/paquet-dist_it.php -text
+lang/paquet-dist_pt_br.php -text
 lang/paquet-dist_ru.php -text
 lang/paquet-dist_sk.php -text
 modeles/article_mots.html -text
