@@ -27,9 +27,10 @@ function formulaires_recherche_charger_dist($lien = '', $class=''){
 	else
 		$lang='';
 
+	$action = ($lien ? $lien : generer_url_public('recherche')); # action specifique, ne passe pas par Verifier, ni Traiter
 	return 
 		array(
-			'action' => ($lien ? $lien : generer_url_public('recherche')), # action specifique, ne passe pas par Verifier, ni Traiter
+			'action' => $action,
 			'recherche' => _request('recherche'),
 			'lang' => $lang,
 			'class' => $class,
