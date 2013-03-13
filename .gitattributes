@@ -51,8 +51,11 @@ inclure/rubriques.html -text
 lang/paquet-dist.xml -text
 lang/paquet-dist_ar.php -text
 lang/paquet-dist_de.php -text
+lang/paquet-dist_eo.php -text
 lang/paquet-dist_fa.php -text
 lang/paquet-dist_it.php -text
+lang/paquet-dist_lb.php -text
+lang/paquet-dist_nl.php -text
 lang/paquet-dist_pt_br.php -text
 lang/paquet-dist_ru.php -text
 lang/paquet-dist_sk.php -text
