@@ -28,6 +28,8 @@ formulaires/inscription.html -text
 formulaires/inscription.php -text
 formulaires/mot_de_passe.html -text
 formulaires/mot_de_passe.php -text
+formulaires/oubli.html -text
+formulaires/oubli.php -text
 formulaires/recherche.html -text
 formulaires/recherche.php -text
 /forum.html -text
