@@ -52,7 +52,7 @@ function formulaires_mot_de_passe_charger_dist($id_auteur=null, $jeton=null){
 			$valeurs['_hidden'] = '<input type="hidden" name="p" value="'.$jeton.'" />';
 	}
 	else {
-		$valeurs['_hidden'] = _T('pass_erreur_code_inconnu');
+		$valeurs['message_erreur'] = _T('pass_erreur_code_inconnu');
 		$valeurs['editable'] =  false; // pas de saisie
 	}
 	$valeurs['oubli']='';
