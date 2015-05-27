@@ -63,6 +63,7 @@ lang/paquet-dist_pt.php -text
 lang/paquet-dist_pt_br.php -text
 lang/paquet-dist_ru.php -text
 lang/paquet-dist_sk.php -text
+lang/paquet-dist_uk.php -text
 modeles/article_mots.html -text
 modeles/article_traductions.html -text
 modeles/favicon.html -text
