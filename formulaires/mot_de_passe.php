@@ -132,9 +132,9 @@ function formulaires_mot_de_passe_traiter_dist($id_auteur = null, $jeton = null)
 			$res = array('message_erreur' => $err);
 		} else {
 			auteur_effacer_jeton($id_auteur);
-			$login = $row['login'];
+			$identifiant = $row['email'] ? $row['email'] : $row['login'];
 			$res['message_ok'] = '<b>' . _T('pass_nouveau_enregistre') . '</b>' .
-				'<br />' . _T('pass_rappel_login', array('login' => $login));
+				'<br />' . _T('pass_rappel_login', array('login' => $identifiant));
 
 			include_spip('inc/auth');
 			$row = sql_fetsel('*', 'spip_auteurs', 'id_auteur=' . intval($id_auteur));
