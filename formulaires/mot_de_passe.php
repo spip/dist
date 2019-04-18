@@ -140,7 +140,10 @@ function formulaires_mot_de_passe_traiter_dist($id_auteur = null, $jeton = null)
 				and !sql_fetsel(
 					'id_auteur',
 					'spip_auteurs',
-					'email='.sql_quote($row['email']).'or login='.sql_quote($row['email']),
+					array(
+						'(email='.sql_quote($row['email']).' or login='.sql_quote($row['email']).')',
+						'id_auteur != '.$id_auteur
+					),
 					'', '', '0,1'
 				)
 			) {
