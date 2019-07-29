@@ -119,16 +119,16 @@ textarea.spip_cadre {
 .spip_documents_center,
 .spip_doc_titre,
 .spip_doc_descriptif,
-.spip_doc_credits { margin-right: auto; margin-left: auto; text-align: center; min-width: 120px;}
+.spip_doc_credits { margin-right: auto; margin-left: auto; text-align: center; min-width: 120px; }
 .spip_documents_center { clear: both; display: block; width: 100%; }
-.spip_documents_left { float: left; margin-right: 1.5em; max-width: 66%;}
-.spip_documents_right { float: right; margin-left: 1.5em; max-width: 66%;}
+.spip_documents_left { float: left; margin-right: 1.5em; max-width: 66%; }
+.spip_documents_right { float: right; margin-left: 1.5em; max-width: 66%; }
 .spip_doc_titre {}
 .spip_doc_descriptif { clear: both; }
-.spip_doc_credits { font-style:italic; clear: both; }
-.spip_doc_legende {display: block;margin-left: auto;margin-right: auto;width: 100%;max-width: 25em;}
-.spip_documents>a {display: inline-block}
-.spip_documents table {text-align: left}
+.spip_doc_credits { font-style: italic; clear: both; }
+.spip_doc_legende { display: block; margin-left: auto; margin-right: auto; width: 100%; max-width: 25em; }
+.spip_documents>a { display: inline-block; }
+.spip_documents table {text-align: left; }
 
 @media (max-width: 480px) {
 	.spip_documents_left, .spip_documents_right { float: none;margin-left: auto;margin-right: auto;max-width:100%;}
