@@ -1,14 +1,14 @@
 <paquet
 	prefix="dist"
 	categorie="squelette"
-	version="3.3.2"
+	version="3.3.3"
 	etat="stable"
 	compatibilite="[3.3.0-dev;3.3.*]"
 	logo="icon/skel.png"
 >
 
 	<nom>Dist</nom>
-	<!-- Squelettes par défaut de SPIP 3.2 -->
+	<!-- Squelettes par défaut de SPIP 3.3 -->
 
 	<auteur>Collectif SPIP</auteur>
 
