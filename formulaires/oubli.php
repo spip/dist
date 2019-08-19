@@ -24,7 +24,8 @@ function formulaires_oubli_charger_dist() {
 // https://code.spip.net/@message_oubli
 function message_oubli($email, $param) {
 	$r = formulaires_oubli_mail($email);
-	if (is_array($r) and $r[1]) {
+	$ok = "";
+	if (is_array($r) and $r[1] and $r[1]['statut'] !== '5poubelle' and $r[1]['pass'] !== '') {
 		include_spip('inc/texte'); # pour corriger_typo
 
 		include_spip('action/inscrire_auteur');
@@ -43,11 +44,10 @@ function message_oubli($email, $param) {
 		);
 		include_spip('inc/notifications');
 		notifications_envoyer_mails($email, $msg);
-
-		return _T('pass_recevoir_mail');
+		$ok .= ":OK";
 	}
 
-	return _T('pass_erreur_probleme_technique');
+	return _T('pass_recevoir_mail').$ok;
 }
 
 // la saisie a ete validee, on peut agir
@@ -81,9 +81,9 @@ function formulaires_oubli_verifier_dist() {
 		$erreurs['oubli'] = $r;
 	} else {
 		if (!$r[1]) {
-			$erreurs['oubli'] = _T('pass_erreur_non_enregistre', array('email_oubli' => spip_htmlspecialchars($email)));
+			spip_log("demande de reinitialisation de mot de passe pour $email non enregistre sur le site", "oubli");
 		} elseif ($r[1]['statut'] == '5poubelle' or $r[1]['pass'] == '') {
-			$erreurs['oubli'] = _T('pass_erreur_acces_refuse');
+			spip_log("demande de reinitialisation de mot de passe pour $email sans acces (poubelle ou pass vide)", "oubli");
 		}
 	}
 
