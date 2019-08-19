@@ -24,7 +24,7 @@ function formulaires_oubli_charger_dist() {
 // https://code.spip.net/@message_oubli
 function message_oubli($email, $param) {
 	$r = formulaires_oubli_mail($email);
-	$ok = "";
+	
 	if (is_array($r) and $r[1] and $r[1]['statut'] !== '5poubelle' and $r[1]['pass'] !== '') {
 		include_spip('inc/texte'); # pour corriger_typo
 
@@ -44,10 +44,9 @@ function message_oubli($email, $param) {
 		);
 		include_spip('inc/notifications');
 		notifications_envoyer_mails($email, $msg);
-		$ok .= ":OK";
 	}
 
-	return _T('pass_recevoir_mail').$ok;
+	return _T('pass_recevoir_mail');
 }
 
 // la saisie a ete validee, on peut agir
