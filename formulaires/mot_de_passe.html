@@ -5,6 +5,11 @@
 <form id="oubli_form" action="[(#ENV{action})]" method="post">
 	[(#REM) activer le traitement auto et dispatch sur charger/verifier/traiter]
 	#ACTION_FORMULAIRE{#ENV{action}}
+	[(#REM) Pour contenter les navigateurs smarts qui pensent reconnaitre un formulaire de login ]
+	<p style="display: none;">
+		<label for="login"><:antispam_champ_vide:></label>
+		<input type="text" class="text" name="login" id="login" value="#ENV{login}" size="10" />
+	</p>
 	<fieldset>
 		<legend><:pass_nouveau_pass:></legend>
 		<div class="editer-groupe">

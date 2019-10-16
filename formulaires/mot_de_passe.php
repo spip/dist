@@ -61,6 +61,10 @@ function formulaires_mot_de_passe_charger_dist($id_auteur = null, $jeton = null)
 		$valeurs['editable'] = false; // pas de saisie
 	}
 	$valeurs['oubli'] = '';
+	// le champ login n'est pas utilise, mais il est destine aux navigateurs smarts
+	// qui veulent remplir le formulaire avec login/mot de passe
+	// et qui sinon remplissent le champ nobot (autocomplete=off n'est pas une option, certains navigateurs l'ignorant)
+	$valeurs['login'] = '';
 	$valeurs['nobot'] = '';
 
 	return $valeurs;
@@ -97,6 +101,10 @@ function formulaires_mot_de_passe_verifier_dist($id_auteur = null, $jeton = null
 
 	if (_request('nobot')) {
 		$erreurs['message_erreur'] = _T('pass_rien_a_faire_ici');
+	}
+	// precaution
+	if (_request('login')) {
+		set_request('login');
 	}
 
 	return $erreurs;
