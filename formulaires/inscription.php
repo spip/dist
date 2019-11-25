@@ -79,11 +79,11 @@ function formulaires_inscription_verifier_dist($mode = '', $id = 0, $retour = ''
 				'spip_auteurs',
 				'email=' . sql_quote($declaration['email'])
 			)) {
-				if (($row['statut'] == '5poubelle') and !$declaration['pass']) {
+				if (($row['statut'] == '5poubelle') and empty($declaration['pass'])) {
 					// irrecuperable
 					$erreurs['message_erreur'] = _T('form_forum_access_refuse');
 				} else {
-					if (($row['statut'] != 'nouveau') and !$declaration['pass']) {
+					if (($row['statut'] != 'nouveau') and empty($declaration['pass'])) {
 						if (intval($row['statut']) > intval($mode)) {
 							set_request('_upgrade_auteur', $row['id_auteur']);
 						} else {
