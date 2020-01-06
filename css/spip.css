@@ -114,15 +114,15 @@ textarea.spip_cadre {
 .spip_logo_center { clear: both; display: block; margin: 0 auto 1.5em auto; }
 .spip_logo_left { float: left; margin-right: 1.5em; margin-bottom: 1.5em; }
 .spip_logo_right { float: right; margin-left: 1.5em; margin-bottom: 1.5em; }
-.spip_documents { margin-bottom: 1.5em; padding: 0; background: none; max-width: 100%;}
+.spip_documents { margin-bottom: 1.5em; padding: 0; background: none; max-width: 100%; }
 .spip_documents,
 .spip_documents_center,
 .spip_doc_titre,
 .spip_doc_descriptif,
 .spip_doc_credits { margin-right: auto; margin-left: auto; text-align: center; min-width: 120px; }
 .spip_documents_center { clear: both; display: block; width: 100%; }
-.spip_documents_left { float: left; margin-right: 1.5em; max-width: 66%; }
-.spip_documents_right { float: right; margin-left: 1.5em; max-width: 66%; }
+.spip_documents_left { float: left; margin-right: 1.5em; max-width: 33%; }
+.spip_documents_right { float: right; margin-left: 1.5em; max-width: 33%; }
 .spip_doc_titre {}
 .spip_doc_descriptif { clear: both; }
 .spip_doc_credits { font-style: italic; clear: both; }
