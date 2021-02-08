@@ -1,7 +1,7 @@
 /* --------------------------------------------------
 
    media.css
-   Illustrations, images et albums
+   Illustrations et images
    (c) 2010-2016 Tiny Typo v1.3 - MIT License - tinytypo.tetue.net
 
 ----------------------------------------------------- */
@@ -111,23 +111,6 @@ figure.right {
     float: none;
     margin-left: 0;
   }
-}
-/* album */
-.album {
-  margin-bottom: 1.5em;
-}
-.album ul {
-  overflow: hidden;
-  margin: 0;
-  list-style: none;
-}
-.album li {
-  float: left;
-  margin: 0;
-  margin: 0 10px 10px 0;
-}
-.album .thumb {
-  margin: 0;
 }
 
 /* fin */
