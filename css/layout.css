@@ -46,6 +46,7 @@ body { text-align: center; background:#ddd;}
 .footer .colophon { float: left; height: 40px; width: 70%; margin: 0; }
 .footer .generator { float: right; }
 .footer .generator a { padding: 0; background: none; }
+.footer .generator a:hover  {color:#c41558;}
 
 /* Gabarit d'impression
 ------------------------------------------ */
