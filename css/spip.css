@@ -8,12 +8,7 @@
 
 /* Neutraliser conflit spip / tinytypo */
 ul, ol {list-style:none;margin-left:0;}
-blockquote {   border:none; padding-left:3em;}
-blockquote:before { content:"";  /* à terme supprimer l'image quote.png et reintegrer le bon sur blocquote.spip_poesie */ }
 s, strike,del, .del { opacity:1;}
-
-/* Compatibilite ancienne dist */
-.on {font-weight:bold;}
 
 /* puce */
 .spip-puce b {display:none;}
@@ -77,35 +72,9 @@ table.spip tr.even td {}
 }
 
 /* Citations, code et poesie */
-blockquote.spip { min-height: 40px; background: url(img/quote.png) no-repeat; }
-.spip_poesie { border-left: 1px solid; }
-.spip_poesie div { margin-left: 50px; text-indent: -50px; }
-.spip_code,
-.spip_cadre {
-	font-family: 'Courier New', Courier, monospace;
-	font-size: 1em;
-	margin:0 .2em;
-}
+pre, code, kbd, samp, var, tt, .spip_code, .spip_cadre { font-family: 'Courier New', Courier, monospace; }
+div.spip_code, .spip_cadre {}
 
-.spip_code {
-	border: 1px solid #dfdfcd;
-	background-color: rgba(227,227,211,0.5);
-	color: #3b3b25;
-	text-shadow: 0 1px 0 #fdfdfc;
-}
-
-.spip_cadre {
-	background:#333;
-	color:#fff;
-	border-radius:0.5em;
-	border:0;
-}
-
-textarea.spip_code,
-textarea.spip_cadre {
-	padding: 1em;
-	width:98%;
-}
 
 /* Logos, documents et images */
 .spip_logo { float:right; margin: 0 0 10px 10px; padding:0; border: none; }
@@ -171,8 +140,9 @@ table.spip .spip_document_image {width: auto !important;}
 .formulaire_spip .picker_bouton { text-align: right; }
 .formulaire_spip .boutons { clear: both; margin: 0; padding: 0; text-align: right; }
 
+
 @media print {
-	.forum-titre, .formulaire_forum { display: none; }
+	.formulaire_spip { display: none; }
 }
 
 /* Barre typo */
@@ -221,9 +191,11 @@ a.spip_out {} /* liens sortants */
 a.spip_url {} /* liens url sortants */
 a.spip_glossaire {} /* liens vers encyclopedie */
 
+
+/* Compatibilite ancienne dist */
+.on {font-weight:bold;}
+
 /* Boutons d'admin */
-.ie6 .spip-admin,
-.ie6 #spip-admin { display: none; }
 @media print {
 	.spip-admin,
 	#spip-admin { display: none; }
