@@ -29,6 +29,7 @@ function formulaires_inscription_charger_dist($mode = '', $id = 0, $retour = '')
 		return false;
 	}
 
+
 	$valeurs = array('nom_inscription' => '', 'mail_inscription' => '', 'id' => $id, '_mode' => $mode);
 
 	return $valeurs;
