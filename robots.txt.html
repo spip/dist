@@ -8,14 +8,17 @@
 User-agent: *
 Allow:    /local/cache-css/
 Allow:    /local/cache-js/
-Disallow: /local/
+Noindex: /local/
+Noindex: /plugins-dist/
+Noindex: /plugins/
+Noindex: /squelettes-dist/
+Noindex: /squelettes/
 Disallow: /ecrire/
-Disallow: /plugins-dist/
 Disallow: /lib/
-Disallow: /plugins/
 Disallow: /prive/
-Disallow: /squelettes-dist/
-Disallow: /squelettes/
+Disallow: /spip.php?action=*
+Disallow: /spip.php?page=login*
+Disallow: /*.api/
 Crawl-delay: 1
 
 Sitemap: #URL_SITE_SPIP/sitemap.xml
