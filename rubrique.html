@@ -17,7 +17,7 @@
 	<INCLURE{fond=inclure/header} />
 	<INCLURE{fond=inclure/nav,env} />
 
-	<div class="main">
+	<main class="main">
 		[(#REM) Contenu principal : contenu de la rubrique ]
 		<div class="wrapper">
 		<div class="content" id="content">
@@ -97,7 +97,7 @@
 		</div><!--.content-->
 		</div><!--.wrapper-->
 	
-		<div class="aside">
+		<aside class="aside">
 	
 			<INCLURE{fond=inclure/navsub, id_rubrique} />
 			#FORMULAIRE_RECHERCHE
@@ -150,8 +150,8 @@
 			[(#REM) Proposer un site ]
 			#FORMULAIRE_SITE
 			
-		</div><!--.aside-->
-	</div><!--.main-->
+		</aside><!--.aside-->
+	</main><!--.main-->
 
 	<INCLURE{fond=inclure/footer,self=#SELF} />
 
