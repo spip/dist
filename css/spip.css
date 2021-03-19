@@ -95,10 +95,17 @@ div.spip_code, .spip_cadre {}
 .spip_doc_titre {}
 .spip_doc_descriptif { clear: both; }
 .spip_doc_credits { font-style: italic; clear: both; }
-.spip_doc_legende { display: block; margin-left: auto; margin-right: auto; width: 100%; max-width: 25em; }
 .spip_documents>a { display: inline-block; }
 .spip_documents table { text-align: left; }
 table.spip .spip_document_image {width: auto !important;}
+
+/* Adaptation aux nouveaux modeles document SPIP 3.3 */
+.spip_document { display: flex; justify-content: center;align-items: center}
+.spip_doc_inner{ margin:0 auto;text-align: center;max-width: 100%;}
+.spip_doc_inner>* {margin-left: auto;margin-right: auto;}
+.spip_document .spip_doc_lien { display: inline-block; }
+.spip_doc_legende { display: block; max-width: 25em; }
+/* Fin adaptation */
 
 @media (max-width: 480px) {
 	.spip_documents_left, .spip_documents_right { float: none; margin-left: auto; margin-right: auto; max-width:100%; }
