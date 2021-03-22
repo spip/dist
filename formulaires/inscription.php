@@ -14,9 +14,19 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-function formulaires_inscription_charger_dist($mode = '', $id = 0, $retour = '') {
+function formulaires_inscription_charger_dist($mode = '', $id_ou_options = 0, $retour = '') {
 	global $visiteur_session;
-
+	
+	// Compatibilité avec l'ancien param "id" dans les deux sens
+	if (!is_array($id_ou_options)) {
+		$options = array('id' => $id_ou_options);
+		$id = $id_ou_options;
+	}
+	else {
+		$options = $id_ou_options;
+		$id = isset($id_ou_options['id']) ? $id_ou_options['id'] : 0;
+	}
+	
 	// fournir le mode de la config ou tester si l'argument du formulaire est un mode accepte par celle-ci
 	// pas de formulaire si le mode est interdit
 	include_spip('inc/autoriser');
@@ -36,11 +46,20 @@ function formulaires_inscription_charger_dist($mode = '', $id = 0, $retour = '')
 }
 
 // Si inscriptions pas autorisees, retourner une chaine d'avertissement
-function formulaires_inscription_verifier_dist($mode = '', $id = 0, $retour = '') {
-
+function formulaires_inscription_verifier_dist($mode = '', $id_ou_options = 0, $retour = '') {
 	set_request('_upgrade_auteur'); // securite
 	include_spip('inc/filtres');
 	$erreurs = array();
+
+	// Compatibilité avec l'ancien param "id" dans les deux sens
+	if (!is_array($id_ou_options)) {
+		$options = array('id' => $id_ou_options);
+		$id = $id_ou_options;
+	}
+	else {
+		$options = $id_ou_options;
+		$id = isset($id_ou_options['id']) ? $id_ou_options['id'] : 0;
+	}
 
 	include_spip('inc/autoriser');
 	if (!autoriser('inscrireauteur', $mode, $id)
@@ -67,7 +86,7 @@ function formulaires_inscription_verifier_dist($mode = '', $id = 0, $retour = ''
 		} else {
 			$f = 'test_inscription_dist';
 		}
-		$declaration = $f($mode, $mail, $nom, $id);
+		$declaration = $f($mode, $mail, $nom, $options);
 		if (is_string($declaration)) {
 			$k = (strpos($declaration, 'mail') !== false) ?
 				'mail_inscription' : 'nom_inscription';
@@ -101,10 +120,24 @@ function formulaires_inscription_verifier_dist($mode = '', $id = 0, $retour = ''
 	return $erreurs;
 }
 
-function formulaires_inscription_traiter_dist($mode = '', $id = 0, $retour = '') {
-
+function formulaires_inscription_traiter_dist($mode = '', $id_ou_options = 0, $retour = '') {
+	if ($retour) {
+		refuser_traiter_formulaire_ajax();
+	}
+	
 	include_spip('inc/filtres');
 	include_spip('inc/autoriser');
+	
+	// Compatibilité avec l'ancien param "id" dans les deux sens
+	if (!is_array($id_ou_options)) {
+		$options = array('id' => $id_ou_options);
+		$id = $id_ou_options;
+	}
+	else {
+		$options = $id_ou_options;
+		$id = isset($id_ou_options['id']) ? $id_ou_options['id'] : 0;
+	}
+	
 	if (!autoriser('inscrireauteur', $mode, $id)) {
 		$desc = 'rien a faire ici';
 	} else {
@@ -123,7 +156,7 @@ function formulaires_inscription_traiter_dist($mode = '', $id = 0, $retour = '')
 		$mail_complet = _request('mail_inscription');
 
 		$inscrire_auteur = charger_fonction('inscrire_auteur', 'action');
-		$desc = $inscrire_auteur($mode, $mail_complet, $nom, array('id'=>$id, 'redirect'=> $retour));
+		$desc = $inscrire_auteur($mode, $mail_complet, $nom, $options);
 	}
 
 	// erreur ?
@@ -131,6 +164,16 @@ function formulaires_inscription_traiter_dist($mode = '', $id = 0, $retour = '')
 		return array('message_erreur' => $desc);
 	} // OK
 	else {
-		return array('message_ok' => _T('form_forum_identifiant_mail'), 'id_auteur' => $desc['id_auteur']);
+		$retours = array(
+			'message_ok' => _T('form_forum_identifiant_mail'),
+			'id_auteur' => $desc['id_auteur'],
+		);
+		
+		// Si on demande à rediriger juste après validation du formulaire
+		if ($retour) {
+			$retours['redirect'] = $retour;
+		}
+		
+		return $retours;
 	}
 }
