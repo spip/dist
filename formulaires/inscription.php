@@ -14,18 +14,34 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
+/**
+ *
+ * #FORMULAIRE_INSCRIPTION
+ * #FORMULAIRE_INSCRIPTION{6forum}
+ * #FORMULAIRE_INSCRIPTION{1comite,#ARRAY{id,#ENV{id_rubrique}}}
+ *
+ * Pour rediriger l'utilisateur apres soumission du formulaire vers une page qui lui dit de verifier ses mails par exemple :
+ * #FORMULAIRE_INSCRIPTION{6forum,'',#URL_PAGE{verifiez-vos-mails}}
+ *
+ * Pour rediriger l'utilisateur apres Clic dans le lien du mail de confirmation, pour lui confirmer son inscription par exemple
+ * #FORMULAIRE_INSCRIPTION{6forum,#ARRAY{redirect,#URL_PAGE{confirmation-inscription}}}
+ *
+ * Tout ensemble
+ * #FORMULAIRE_INSCRIPTION{6forum,#ARRAY{redirect,#URL_PAGE{confirmation-inscription}}, #URL_PAGE{verifiez-vos-mails}}
+ *
+ * Syntaxe legacy :
+ * #FORMULAIRE_INSCRIPTION{1comite,#ENV{id_rubrique}}
+ *
+ *
+ * @param string $mode
+ * @param int $id_ou_options
+ * @param string $retour
+ * @return array|false
+ */
 function formulaires_inscription_charger_dist($mode = '', $id_ou_options = 0, $retour = '') {
-	global $visiteur_session;
-	
+
 	// Compatibilité avec l'ancien param "id" dans les deux sens
-	if (!is_array($id_ou_options)) {
-		$options = array('id' => $id_ou_options);
-		$id = $id_ou_options;
-	}
-	else {
-		$options = $id_ou_options;
-		$id = isset($id_ou_options['id']) ? $id_ou_options['id'] : 0;
-	}
+	list($options, $id) = formulaires_inscription_arguments_id_options($id_ou_options);
 	
 	// fournir le mode de la config ou tester si l'argument du formulaire est un mode accepte par celle-ci
 	// pas de formulaire si le mode est interdit
@@ -35,7 +51,7 @@ function formulaires_inscription_charger_dist($mode = '', $id_ou_options = 0, $r
 	}
 
 	// pas de formulaire si on a déjà une session avec un statut égal ou meilleur au mode
-	if (isset($visiteur_session['statut']) && ($visiteur_session['statut'] <= $mode)) {
+	if (isset($GLOBALS['visiteur_session']['statut']) and ($GLOBALS['visiteur_session']['statut'] <= $mode)) {
 		return false;
 	}
 
@@ -45,6 +61,26 @@ function formulaires_inscription_charger_dist($mode = '', $id_ou_options = 0, $r
 	return $valeurs;
 }
 
+/**
+ * Gerer l'argument $id_ou_options
+ * @param int|array $id_ou_options
+ * @return array
+ */
+function formulaires_inscription_arguments_id_options($id_ou_options) {
+	// Compatibilité avec l'ancien param "id" dans les deux sens
+	if (!is_array($id_ou_options)) {
+		$options = ['id' => intval($id_ou_options)];
+		$id = $options['id'];
+	}
+	else {
+		$options = $id_ou_options;
+		$id = !empty($id_ou_options['id']) ? $id_ou_options['id'] : 0;
+	}
+
+	return [$options, $id];
+}
+
+
 // Si inscriptions pas autorisees, retourner une chaine d'avertissement
 function formulaires_inscription_verifier_dist($mode = '', $id_ou_options = 0, $retour = '') {
 	set_request('_upgrade_auteur'); // securite
@@ -52,14 +88,7 @@ function formulaires_inscription_verifier_dist($mode = '', $id_ou_options = 0, $
 	$erreurs = array();
 
 	// Compatibilité avec l'ancien param "id" dans les deux sens
-	if (!is_array($id_ou_options)) {
-		$options = array('id' => $id_ou_options);
-		$id = $id_ou_options;
-	}
-	else {
-		$options = $id_ou_options;
-		$id = isset($id_ou_options['id']) ? $id_ou_options['id'] : 0;
-	}
+	list($options, $id) = formulaires_inscription_arguments_id_options($id_ou_options);
 
 	include_spip('inc/autoriser');
 	if (!autoriser('inscrireauteur', $mode, $id)
@@ -129,14 +158,7 @@ function formulaires_inscription_traiter_dist($mode = '', $id_ou_options = 0, $r
 	include_spip('inc/autoriser');
 	
 	// Compatibilité avec l'ancien param "id" dans les deux sens
-	if (!is_array($id_ou_options)) {
-		$options = array('id' => $id_ou_options);
-		$id = $id_ou_options;
-	}
-	else {
-		$options = $id_ou_options;
-		$id = isset($id_ou_options['id']) ? $id_ou_options['id'] : 0;
-	}
+	list($options, $id) = formulaires_inscription_arguments_id_options($id_ou_options);
 	
 	if (!autoriser('inscrireauteur', $mode, $id)) {
 		$desc = 'rien a faire ici';
