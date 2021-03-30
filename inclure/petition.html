@@ -28,7 +28,7 @@
 		</tr>
 		</BOUCLE_signatures>
 	</table>
-	[<p class="pagination">(#PAGINATION)</p>]
+	[<div class="p pagination">(#PAGINATION)</div>]
 	[(#REM) Afficher un moteur de recherche si plus de 50 signatures
 	ou s'il etait deja present au coup d'avant]
 	[(#ENV{recherche_signatures}|?{31,#_signatures:GRAND_TOTAL}|>{50}|oui)
