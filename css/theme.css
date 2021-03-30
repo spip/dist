@@ -231,14 +231,19 @@ html[dir="rtl"] .formulaire_forum .saisie_texte .explication { font-style: norma
 .menu ul li ul { margin-left: 1.5em; list-style: circle; }
  
 /* Pagination */
-.pagination a,
-.pagination .on  { padding:.5em; margin: 0em; border-radius:.25em; }
-.pagination a { background: #f0f0f0; text-decoration: none; }
-.pagination .on,
-.pagination a:hover,
-.pagination a:focus,
-.pagination a:active { font-weight: bold; background: #c41558; color: #fff; }
-.pagination .sep { visibility: hidden; }
+.pagination .pagination-items {list-style: none;display: flex;flex-direction: row; justify-content: center}
+.pagination .pagination-item {  margin: 0em; flex-basis: 7.5%; display: flex;align-items: center;}
+.pagination .pagination_precedent_suivant .pagination-item { flex-basis: auto;}
+.pagination .pagination-item + .pagination-item {  margin-left: 0.5em }
+.pagination .pagination-lien { display:block; flex-basis: 100%; background: #f0f0f0; text-decoration: none; padding:.5em; border-radius:.25em;}
+.pagination .on .pagination-lien,
+.pagination a.pagination-lien:hover,
+.pagination a.pagination-lien:focus,
+.pagination a.pagination-lien:active { background: #c41558; color: #fff; }
+.pagination .on .pagination-lien {font-weight: bold;}
+.pagination .pagination_precedent_suivant .disabled {visibility: hidden}
+.pagination .pagination-item.disabled {}
+.pagination .pagination-item.disabled .pagination-lien {color:#888; font-weight: normal;}
 .menu_articles .pagination strong {font-size:1em;}
 
 /* Listes d'articles et extraits introductifs */
