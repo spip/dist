@@ -235,15 +235,15 @@ html[dir="rtl"] .formulaire_forum .saisie_texte .explication { font-style: norma
 .pagination .pagination-item {  margin: 0em; flex-basis: 7.5%; display: flex;align-items: center;}
 .pagination .pagination_precedent_suivant .pagination-item { flex-basis: auto;}
 .pagination .pagination-item + .pagination-item {  margin-left: 0.5em }
-.pagination .pagination-lien { display:block; flex-basis: 100%; background: #f0f0f0; text-decoration: none; padding:.5em; border-radius:.25em; text-align: center;}
-.pagination .on .pagination-lien,
-.pagination a.pagination-lien:hover,
-.pagination a.pagination-lien:focus,
-.pagination a.pagination-lien:active { background: #c41558; color: #fff; }
-.pagination .on .pagination-lien {font-weight: bold;}
+.pagination .pagination-item-label { display:block; flex-basis: 100%; background: #f0f0f0; text-decoration: none; padding:.5em; border-radius:.25em; text-align: center;}
+.pagination .on .pagination-item-label,
+.pagination a.pagination-item-label:hover,
+.pagination a.pagination-item-label:focus,
+.pagination a.pagination-item-label:active { background: #c41558; color: #fff; }
+.pagination .on .pagination-item-label {font-weight: bold;}
 .pagination .pagination_precedent_suivant .disabled {visibility: hidden}
 .pagination .pagination-item.disabled {}
-.pagination .pagination-item.disabled .pagination-lien {color:#888; font-weight: normal;}
+.pagination .pagination-item.disabled .pagination-item-label {color:#888; font-weight: normal;}
 .menu_articles .pagination strong {font-size:1em;}
 
 /* Listes d'articles et extraits introductifs */
