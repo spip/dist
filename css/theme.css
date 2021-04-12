@@ -124,8 +124,9 @@ table.spip tfoot { border-top: 1px solid; }
 .formulaire_spip textarea {
 	width: 100%;
 	box-sizing: border-box;
-	padding:.2em;
-	border:solid 1px #aaa;
+	padding:.25em;
+	border:solid 1px #ccc;
+	border-radius:4px;
 }
 
 .formulaire_spip .choix label {
