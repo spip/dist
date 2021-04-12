@@ -129,6 +129,13 @@ table.spip tfoot { border-top: 1px solid; }
 	border-radius:4px;
 }
 
+.formulaire_spip img.ui-datepicker-trigger {
+	position:relative;
+	max-width: 1.5em;
+	margin-top: -0.25em;
+	margin-left: -1.75em;
+}
+
 .formulaire_spip .choix label {
 	display: inline;
 }
