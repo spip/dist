@@ -118,7 +118,7 @@ table.spip .spip_document_image {width: auto !important;}
 .formulaire_spip fieldset { margin: 3em 0 0; padding:1em 0; }
 .formulaire_spip fieldset fieldset { margin-left: 1em; }
 .formulaire_spip label { padding: 4px 0; font-size: 120%; font-weight: 700; }
-.formulaire_spip  h3.legend { font-size: 140%; line-height: 135%; font-weight: bold; padding-bottom: 0.2em; border-bottom: 1px solid #CCCCCC;}
+.formulaire_spip  h3.legend, .formulaire_spip  legend.legend { font-size: 140%; line-height: 135%; font-weight: bold; padding-bottom: 0.2em; border-bottom: 1px solid #CCCCCC;}
 .formulaire_spip .editer,
 .formulaire_spip .choix { clear: both; padding: 0.3em 0; }
 .formulaire_spip .editer { margin:0.7em 0; }
