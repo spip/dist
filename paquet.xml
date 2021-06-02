@@ -4,11 +4,11 @@
 	version="3.4.1"
 	etat="stable"
 	compatibilite="[4.0.0-beta;4.0.*]"
-	logo="icon/skel.png"
+	logo="icon/skel.svg"
 >
 
 	<nom>Dist</nom>
-	<!-- Squelettes par défaut de SPIP 3.3 -->
+	<!-- Squelettes par défaut de SPIP 4.0 -->
 
 	<auteur>Collectif SPIP</auteur>
 
