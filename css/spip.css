@@ -99,12 +99,14 @@ div.spip_code, .spip_cadre {}
 .spip_documents table { text-align: left; }
 table.spip .spip_document_image {width: auto !important;}
 
-/* Adaptation aux nouveaux modeles document SPIP 3.3 */
+/* Adaptation aux nouveaux modeles document SPIP 4.0 */
 .spip_document { display: flex; justify-content: center;align-items: center}
 .spip_doc_inner{ margin:0 auto;text-align: center;max-width: 100%;}
 .spip_doc_inner>* {margin-left: auto;margin-right: auto;}
 .spip_document .spip_doc_lien { display: inline-block; }
 .spip_doc_legende { display: block; max-width: 25em; }
+.spip_document img,.spip_document svg { max-width: 100%; height: auto; }
+
 /* Fin adaptation */
 
 @media (max-width: 480px) {
