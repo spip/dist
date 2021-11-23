@@ -34,7 +34,7 @@
 	Si un seul document est joint a l'article, et si le texte est vide,
 	on incruste automatiquement ce document
 ]
-<BOUCLE_documents_decompte(DOCUMENTS spip_documents_liens articles) {id_article?}{objet?}{id_objet?} {media!=image} {texte=''} {vu=non}>
+<BOUCLE_documents_decompte(DOCUMENTS documents_liens articles) {id_article?} {media!=image} {articles.texte=''} {vu=non}>
 [(#TOTAL_BOUCLE|=={1}
 	|?{[(#INCLURE{fond=modeles/emb, id_document}
 	|trim)]})]</BOUCLE_documents_decompte>
