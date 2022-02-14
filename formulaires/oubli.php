@@ -29,7 +29,8 @@ function message_oubli($email, $param) {
 		include_spip('inc/texte'); # pour corriger_typo
 
 		include_spip('action/inscrire_auteur');
-		$cookie = auteur_attribuer_jeton($r[1]['id_auteur']);
+		$id_auteur = $r[1]['id_auteur'];
+		$cookie = auteur_attribuer_jeton($id_auteur);
 
 		// l'url_reset doit etre une URL de confiance, on force donc un url_absolue sur adresse_site
 		include_spip('inc/filtres');
@@ -39,11 +40,12 @@ function message_oubli($email, $param) {
 				'url_reset' => url_absolue(
 					generer_url_public('spip_pass', "$param=$cookie"),
 					$GLOBALS['meta']['adresse_site'] . '/'
-				)
+				),
+			'id_auteur' => $id_auteur
 			)
 		);
 		include_spip('inc/notifications');
-		notifications_envoyer_mails($email, $msg);
+		notifications_envoyer_mails($email, $msg, array('identifiant' => 'formulaires_oubli_mail'));
 	}
 
 	return _T('pass_recevoir_mail');
