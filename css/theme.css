@@ -239,7 +239,7 @@ html[dir="rtl"] .formulaire_forum .saisie_texte .explication { font-style: norma
 .menu ul li ul { margin-left: 1.5em; list-style: circle; }
  
 /* Pagination */
-.pagination .pagination-items {list-style: none;display: flex;flex-direction: row; justify-content: center}
+.pagination .pagination-items {list-style: none;display: flex;flex-wrap: wrap; flex-direction: row; justify-content: center}
 .pagination .pagination-item {  margin: 0em; flex-basis: 7.5%; display: flex;align-items: center;}
 .pagination .pagination_precedent_suivant .pagination-item { flex-basis: auto;}
 .pagination .pagination-item + .pagination-item {  margin-left: 0.5em }
